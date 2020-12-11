@@ -2,9 +2,21 @@ import React, { Component } from 'react';
 
 
 class Success extends Component {
+    restartFeedback = () => {
+        this.props.history.push('/');
+    }
+
     render() {
         return (
-            <p>Hi from Success!</p>
+            <div>
+                <div>
+                    <h2>Feedback!</h2>
+                </div>
+                <div>
+                    <h2>Thank You!</h2>
+                    <button onClick={this.restartFeedback}>Leave new feedback</button>
+                </div>
+            </div>
         )
     }
 }
