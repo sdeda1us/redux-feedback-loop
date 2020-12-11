@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
+
 
 
 class Success extends Component {
     restartFeedback = () => {
+        
+        axios.post('/feedback', 
+        {feelings:this.props.reduxState.feelingStore, 
+        understanding: this.props.reduxState.understandingStore,
+        supported: this.props.reduxState.supportedStore,
+        comments: this.props.reduxState.commentsStore})
+        //dispatch empty payloads to reset
         this.props.history.push('/');
     }
 
@@ -21,4 +31,9 @@ class Success extends Component {
     }
 }
 
-export default Success;
+
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+  });
+
+export default connect(putReduxStateOnProps)(Success);

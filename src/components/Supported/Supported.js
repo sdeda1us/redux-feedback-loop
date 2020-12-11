@@ -22,7 +22,7 @@ class Supported extends Component {
             <div>
                 <h2>How well are you being supported?</h2>
                 <label>Support?</label>
-                <input onChange={this.handleChange} type="number"/>
+                <input onChange={this.handleChange} type="number" min="0" max="5" required/>
                 <button onClick={this.nextPage}>Next</button>
             </div>
         )
