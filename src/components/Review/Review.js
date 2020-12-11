@@ -14,7 +14,7 @@ class Review extends Component {
                 <p>Feelings: {this.props.reduxState.feelingStore}</p>
                 <p>Understanding: {this.props.reduxState.understandingStore}</p>
                 <p>Support: {this.props.reduxState.supportedStore}</p>
-                <p>Comments: </p>
+                <p>Comments: {this.props.reduxState.commentsStore}</p>
                 <button onClick={this.nextPage}>Submit</button>
             </div>
         )
