@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 // let dbObject = {
 //     feelings:this.props.reduxState.feelingStore,
@@ -29,7 +31,7 @@ class Success extends Component {
                 </div>
                 <div>
                     <h2>Thank You!</h2>
-                    <button onClick={this.restartFeedback}>Leave new feedback</button>
+                    <Button variant="contained" onClick={this.restartFeedback}>Leave new feedback</Button>
                 </div>
             </div>
         )
