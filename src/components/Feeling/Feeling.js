@@ -8,7 +8,7 @@ class Feeling extends Component {
       }
 
     nextPage = (event) => {
-        this.props.dispatch({type:'ADD_FEELING}', payload: this.state.newFeeling});
+        this.props.dispatch({type:'ADD_FEELING', payload: this.state.newFeeling});
         this.props.history.push('/understand');
     }
     

@@ -12,9 +12,9 @@ class Review extends Component {
             <div>
                 <h2>Review Your Feedback</h2>
                 <p>Feelings: {this.props.reduxState.feelingStore}</p>
-                <p>Understanding</p>
-                <p>Support:</p>
-                <p>Comments</p>
+                <p>Understanding: {this.props.reduxState.understandingStore}</p>
+                <p>Support: {this.props.reduxState.supportedStore}</p>
+                <p>Comments: </p>
                 <button onClick={this.nextPage}>Submit</button>
             </div>
         )
