@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-
+// let dbObject = {
+//     feelings:this.props.reduxState.feelingStore,
+//     understanding: this.props.reduxState.understandingStore,
+//     supported: this.props.reduxState.supportedStore,
+//     comments: this.props.reduxState.commentsStore
+// }
 
 class Success extends Component {
     restartFeedback = () => {

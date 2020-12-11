@@ -8,6 +8,7 @@ class Feeling extends Component {
       }
 
     nextPage = (event) => {
+        event.preventDefault();
         this.props.dispatch({type:'ADD_FEELING', payload: this.state.newFeeling});
         this.props.history.push('/understand');
     }
@@ -22,9 +23,11 @@ class Feeling extends Component {
         return (
             <div>
                 <h2>How are you feeling today?</h2>
-                <label>Feeling?</label>
-                <input onChange={this.handleChange} type="number" min="0" max="5" />
-                <button onClick={this.nextPage}>Next</button>
+                <form onSubmit={this.nextPage}>
+                    <label>Feeling?</label>
+                    <input onChange={this.handleChange} type="number" min="0" max="5" required/>
+                    <button type="submit">Next</button>
+                </form>
             </div>
         )
     }

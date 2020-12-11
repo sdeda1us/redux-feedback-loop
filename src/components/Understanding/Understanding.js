@@ -8,7 +8,8 @@ class Understanding extends Component {
       }
 
     
-    nextPage = () => {
+    nextPage = (event) => {
+        event.preventDefault();
         this.props.dispatch({type:'ADD_UNDERSTAND', payload: this.state.newUnderstanding});
         this.props.history.push('/support');
     }
@@ -24,9 +25,11 @@ class Understanding extends Component {
             
             <div>
                 <h2>How well are you understanding the content?</h2>
-                <label>Understanding?</label>
-                <input onChange={this.handleChange} type="number" min="0" max="5"/>
-                <button onClick={this.nextPage}>Next</button>
+                <form onSubmit={this.nextPage}>
+                    <label>Understanding?</label>
+                    <input onChange={this.handleChange} type="number" min="0" max="5" required/>
+                    <button type="Submit">Next</button>
+                </form>
             </div>
         )
     }
