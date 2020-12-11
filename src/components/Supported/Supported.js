@@ -9,6 +9,10 @@ class Supported extends Component {
         newSupported: ''
       }
 
+    backPage = (event) => {
+        this.props.history.push('/understand');
+    }
+
     nextPage = (event) => {
         event.preventDefault();
         this.props.dispatch({type:'ADD_SUPPORTED', payload: this.state.newSupported});
@@ -27,8 +31,9 @@ class Supported extends Component {
                 <h2>How well are you being supported?</h2>
                 <form onSubmit={this.nextPage}>
                     {/* <label>Support?</label> */}
-                    <TextField label="Support?" size="20" onChange={this.handleChange} type="number" min="0" max="5" required/>
+                    <TextField label="Support?" onChange={this.handleChange} type="number" min="0" max="5" required/>
                     <Button variant="contained" type="submit">Next</Button>
+                    <Button variant="outlined" onClick={this.backPage}>Back</Button>
                 </form>
             </div>
         )

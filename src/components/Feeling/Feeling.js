@@ -36,7 +36,7 @@ class Feeling extends Component {
                 <h2>How are you feeling today?</h2>
                 <form onSubmit={this.nextPage}>
                     {/* <label>Feeling?</label> */}
-                    <TextField label="Feeling?" size="20" onChange={this.handleChange} type="number" min="0" max="5" required/>
+                    <TextField label="Feeling?" onChange={this.handleChange} type="number" min="0" max="5" required/>
                     <Button variant="contained" type="submit">Next</Button>
                 </form>
             </div>

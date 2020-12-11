@@ -19,7 +19,10 @@ class Understanding extends Component {
         newUnderstanding: ''
       }
 
-    
+    backPage = (event) => {
+        this.props.history.push('/');
+    }
+
     nextPage = (event) => {
         event.preventDefault();
         this.props.dispatch({type:'ADD_UNDERSTAND', payload: this.state.newUnderstanding});
@@ -39,8 +42,9 @@ class Understanding extends Component {
                 <h2>How well are you understanding the content?</h2>
                 <form onSubmit={this.nextPage}>
                     {/* <label>Understanding?</label> */}
-                    <TextField label="Understanding?" size="20" onChange={this.handleChange} type="number" min="0" max="5" required/>
+                    <TextField label="Understanding?" onChange={this.handleChange} type="number" min="0" max="5" required/>
                     <Button variant="contained" type="Submit">Next</Button>
+                    <Button variant="outlined" onClick={this.backPage}>Back</Button>
                 </form>
             </div>
         )

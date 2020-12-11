@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+
 
 class Review extends Component {
 
@@ -19,6 +19,7 @@ class Review extends Component {
                 <p>Support: {this.props.reduxState.supportedStore}</p>
                 <p>Comments: {this.props.reduxState.commentsStore}</p>
                 <Button variant="contained" onClick={this.nextPage}>Submit</Button>
+                <Button variant="outlined" onClick={this.backPage}>Back</Button>
             </div>
         )
     }

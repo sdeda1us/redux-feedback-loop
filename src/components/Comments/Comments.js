@@ -10,6 +10,10 @@ class Comments extends Component {
         newComments: ''
       }
 
+    backPage = (event) => {
+        this.props.history.push('/support');
+    }
+
     nextPage = () => {
         this.props.dispatch({type:'ADD_COMMENTS', payload: this.state.newComments});
         this.props.history.push('/review');
@@ -33,9 +37,11 @@ class Comments extends Component {
                     fullWidth
                     rows={10}
                     variant="filled"
+                    onChange={this.handleChange}
                 />
                 {/* <TextField label="Comments?" onChange={this.handleChange} type="text"/> */}
                 <Button variant="contained" onClick={this.nextPage}>Next</Button>
+                <Button variant="outlined" onClick={this.backPage}>Back</Button>
             </div>
         )
     }
