@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class Comments extends Component {
 
@@ -22,9 +25,17 @@ class Comments extends Component {
         return (
             <div>
                 <h2>Any comments you wish to leave?</h2>
-                <label>Comments?</label>
-                <input onChange={this.handleChange} type="text"/>
-                <button onClick={this.nextPage}>Next</button>
+                {/* <label>Comments?</label> */}
+                <TextField
+                    id="standard-textarea"
+                    label="Comments?"
+                    multiline
+                    fullWidth
+                    rows={10}
+                    variant="filled"
+                />
+                {/* <TextField label="Comments?" onChange={this.handleChange} type="text"/> */}
+                <Button variant="contained" onClick={this.nextPage}>Next</Button>
             </div>
         )
     }

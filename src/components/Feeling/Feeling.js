@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& > *': {
+        margin: theme.spacing(2),
+      },
+    },
+  }));
 
 class Feeling extends Component {
     
@@ -24,9 +35,9 @@ class Feeling extends Component {
             <div>
                 <h2>How are you feeling today?</h2>
                 <form onSubmit={this.nextPage}>
-                    <label>Feeling?</label>
-                    <input onChange={this.handleChange} type="number" min="0" max="5" required/>
-                    <button type="submit">Next</button>
+                    {/* <label>Feeling?</label> */}
+                    <TextField label="Feeling?" size="20" onChange={this.handleChange} type="number" min="0" max="5" required/>
+                    <Button variant="contained" type="submit">Next</Button>
                 </form>
             </div>
         )
