@@ -3,6 +3,8 @@
 }
 
 .App-header {
+  font-family: sans-serif;
+  letter-spacing: 3px;
   background-color: #033076;
   min-height: 70px;
   padding: 20px;
@@ -17,3 +19,6 @@
   font-size: large;
 }
 
+.successDiv {
+  border: 2px solid black;
+}
