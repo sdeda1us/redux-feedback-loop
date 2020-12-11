@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 
 class Feeling extends Component {
     
-    nextPage = () => {
+    state = {
+        newFeeling: ''
+      }
+
+    nextPage = (event) => {
+        this.props.dispatch({type:'ADD_FEELING}', payload: this.state.newFeeling});
         this.props.history.push('/understand');
     }
     
+    handleChange = (event) => {
+        this.setState({
+            newFeeling: event.target.value,
+        });
+    }
+
     render() {
         return (
             <div>
                 <h2>How are you feeling today?</h2>
                 <label>Feeling?</label>
-                <input type="number"/>
+                <input onChange={this.handleChange} type="number"/>
                 <button onClick={this.nextPage}>Next</button>
             </div>
         )
     }
 }
 
-export default Feeling;
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+  });
+
+export default connect(putReduxStateOnProps)(Feeling);

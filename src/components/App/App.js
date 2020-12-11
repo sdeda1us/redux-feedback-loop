@@ -9,6 +9,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Success from '../Success/Success';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -30,4 +31,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const putReduxStateOnProps = (reduxState) => ({
+  reduxState
+});
+
+export default connect(putReduxStateOnProps)(App);

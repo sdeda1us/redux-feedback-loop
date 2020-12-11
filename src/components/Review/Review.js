@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 
 class Review extends Component {
 
@@ -11,7 +11,7 @@ class Review extends Component {
         return (
             <div>
                 <h2>Review Your Feedback</h2>
-                <p>Feelings: </p>
+                <p>Feelings: {this.props.reduxState.feelingStore}</p>
                 <p>Understanding</p>
                 <p>Support:</p>
                 <p>Comments</p>
@@ -21,4 +21,8 @@ class Review extends Component {
     }
 }
 
-export default Review;
+const putReduxStateOnProps = (reduxState) => ({
+    reduxState
+  });
+
+export default connect(putReduxStateOnProps)(Review);
