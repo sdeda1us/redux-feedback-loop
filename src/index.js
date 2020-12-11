@@ -12,12 +12,18 @@ const feelingStore = (state=0, action) => {
     if(action.type==='ADD_FEELING'){
         return action.payload;
     }
+    if(action.type==='CLEAR_FIELDS'){
+        return [];
+    }
     return state;
 }
 
 const understandingStore = (state=0, action) => {
     if(action.type==='ADD_UNDERSTAND'){
         return action.payload;
+    }
+    if(action.type==='CLEAR_FIELDS'){
+        return [];
     }
     return state;
 }
@@ -26,12 +32,18 @@ const supportedStore = (state=0, action) => {
     if(action.type==='ADD_SUPPORTED'){
         return action.payload;
     }
+    if(action.type==='CLEAR_FIELDS'){
+        return [];
+    }
     return state;
 }
 
 const commentsStore = (state='', action) => {
     if(action.type==='ADD_COMMENTS'){
         return action.payload;
+    }
+    if(action.type==='CLEAR_FIELDS'){
+        return [];
     }
     return state;
 }

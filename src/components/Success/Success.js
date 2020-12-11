@@ -8,7 +8,7 @@ import axios from 'axios';
 //     supported: this.props.reduxState.supportedStore,
 //     comments: this.props.reduxState.commentsStore
 // }
-
+ 
 class Success extends Component {
     restartFeedback = () => {
         
@@ -17,7 +17,7 @@ class Success extends Component {
         understanding: this.props.reduxState.understandingStore,
         supported: this.props.reduxState.supportedStore,
         comments: this.props.reduxState.commentsStore})
-        //dispatch empty payloads to reset
+        this.props.dispatch({type: 'CLEAR_FIELDS'});
         this.props.history.push('/');
     }
 
