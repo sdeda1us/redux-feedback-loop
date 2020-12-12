@@ -22,6 +22,7 @@ class Admin extends Component {
     }
 
     deleteItem = (id) => {
+        console.log(id);
         axios.delete(`/feedback/${id}`)
         .then((response) => {
             this.getFeedback();
@@ -65,7 +66,7 @@ class Admin extends Component {
                                     <TableCell>{log.understanding}</TableCell> 
                                     <TableCell>{log.support}</TableCell> 
                                     <TableCell>{log.comments}</TableCell>
-                                    <TableCell><DeleteSweepIcon onClick={(event) => this.deleteItem(log.id)}/></TableCell>
+                                    <TableCell><DeleteSweepIcon onClick={() => this.deleteItem(log.id)}/></TableCell>
                             </TableRow>
                             )}
                     </TableBody>

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-router.post('/feedback', (req, res) => {
+router.post('/', (req, res) => {
     console.log('POST to pg');
     sqlText = `INSERT INTO feedback (feeling, understanding, support, comments) 
                 VALUES ($1, $2, $3, $4)`;
@@ -16,7 +16,7 @@ router.post('/feedback', (req, res) => {
     });
 })
 
-router.get('/feedback', (req, res) => {
+router.get('/', (req, res) => {
     console.log('POST to pg');
     sqlText = `SELECT * FROM feedback ORDER BY ID`;
     pool.query(sqlText)
@@ -25,19 +25,20 @@ router.get('/feedback', (req, res) => {
         res.send(result.rows);
     })
     .catch((error) => {
-        console.log('Error GET /api/pizza', error)
+        console.log('Error GET', error)
         res.sendStatus(500);
     });
 })
 
-router.delete('/feedabck/:id', (res, req) => {
+router.delete('/:id', (req, res) => {
+    console.log(req.params.id);
     let id = req.params.id;
     console.log('DELETING', id);
     let sqlText = 'DELETE FROM feedback WHERE id=$1;';
-    pool.query(sqltext, [id])
+    pool.query(sqlText, [id])
     .then((result) => {
         console.log(`record ${id} deleted`);
-        res.SendStatus(200);
+        res.sendStatus(200);
     })
     .catch((error) => {
         console.log(`Error making database query ${sqlText}`, error);
