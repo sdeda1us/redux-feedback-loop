@@ -22,8 +22,8 @@ class Admin extends Component {
     }
 
     deleteItem = (id) => {
-        console.log(id);
-        axios.delete(`/feedback/${id}`)
+        if(window.confirm('Are you sure you want to delete this record from the database?')){
+            axios.delete(`/feedback/${id}`)
         .then((response) => {
             this.getFeedback();
         })
@@ -31,6 +31,15 @@ class Admin extends Component {
             alert('Something Bad Happened!!')
             console.log('Error:', error);
         })
+        }
+        // axios.delete(`/feedback/${id}`)
+        // .then((response) => {
+        //     this.getFeedback();
+        // })
+        // .catch((error) => {
+        //     alert('Something Bad Happened!!')
+        //     console.log('Error:', error);
+        // })
     }
 
     getFeedback = () => {
