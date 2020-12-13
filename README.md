@@ -17,6 +17,11 @@ The applicaiton uses redux to store the values the user enters while they are na
 
 ## Screen Shots
 
+![](./public/images/understanding.png)
+![](./public/images/comments.png)
+![](./public/images/review.png)
+![](./public/images/success.png)
+![](./public/images/admin_confirm.png)
 
 ## Installation
 
